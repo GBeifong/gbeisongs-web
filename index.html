@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <base href="/gbeisongs-web/">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GBeisongs: versão web de teste, com músicas originais de demonstração.">
+  <!-- Página de teste: não deve aparecer em buscadores. -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0B0B14">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="GBeisongs">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>GBeisongs (teste)</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    html, body { height: 100%; margin: 0; background: #0B0B14; }
+    #carregando {
+      position: fixed; inset: 0; display: flex; align-items: center;
+      justify-content: center; color: #B8B8CC;
+      font: 16px system-ui, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div id="carregando">Carregando o GBeisongs…</div>
+  <script>
+    // Some assim que o app desenha o primeiro quadro.
+    window.addEventListener('flutter-first-frame', function () {
+      var aviso = document.getElementById('carregando');
+      if (aviso) aviso.remove();
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
